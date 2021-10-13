@@ -1,0 +1,15 @@
+data="all students are STUPIDS"
+f=open("abc.txt","w")
+f.write(data)
+with open("abc.txt","r+") as f:
+  text=f.read()
+  print(text)
+  print("the currend cursor position: ",f.tell())
+  f.seek(17)
+  print("the current position is ",f.tell())
+  print(f.read())
+  f.write("GEMS")
+  f.seek(0)
+  text=f.read()
+  print(text)
+  print(f.tell())

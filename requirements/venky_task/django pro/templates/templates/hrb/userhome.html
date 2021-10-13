@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{%include 'hrb/base1.html' %}
+{%block body%}
+<table>
+  <tr>
+    <td>
+        <div id="left1"><center>
+<h3 margin="5px">Available Rooms:{{total}}</h3></center><hr>
+<h2>Ac Rooms:{{Acrooms}}
+</h2>
+<h2>NonAc Rooms:{{NonAc}}
+</h2>
+        </div></td>
+        <td><div id="middle1">
+<h1 align="CENTER">WELCOME</h1>
+        <!--   {%if request.session %}
+            <table border=2>
+              <thead>
+                <th>Cookie Name</th>
+                <th>Cookie Value</th>
+              </thead>
+              {% for key,value in request.session.items %}
+              <tr>
+                <td>{{key}}</td>
+                <td>{{value}}</td>
+              </tr>
+              {% endfor %}
+              </table>
+             {%else%}
+             <p>Cookie Information is not available</p>
+            {%endif%}-->
+        </div></td>
+        <td>
+        <div id="right1">
+<h3>visitors list</h3><hr>
+{% for visitor in visitors%}
+<h1>{{visitor.username}}</h1>
+
+{%endfor%}
+{% include 'hrb/pagination.html' with page=visitors%}
+        </div></td>
+  </tr>
+</table>
+{%endblock%}

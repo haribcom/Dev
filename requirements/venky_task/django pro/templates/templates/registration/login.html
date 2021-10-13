@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{%extends 'hrb/base.html'%}
+{%block body%}
+<div class="" align="center">
+  <h1>Login here</h1>
+      <form method="post">
+
+      {{ form.as_p }}
+      {% csrf_token %}
+      <button type="submit">Login</button>
+      </form>
+</div>
+
+{%endblock%}

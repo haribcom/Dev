@@ -1,0 +1,159 @@
+1) Write a program to calculate the avg of a given list =[5,10,6,20,4]
+
+A)	l = [5,10,6,20,4]
+	l.sort()
+	tot = 0
+	for i in l:
+   	tot +=i
+	avg = tot//2
+	print(tot)
+	print(avg)
+#(or)
+	import numpy
+	l = [5,10,6,20,4]
+	l.sort()
+	tot = numpy.sum(l)
+	avrg = tot//2
+	print(tot)
+	print(avrg)
+
+
+2) sort a dictionary dict1 = {'two':2, 'one':1, 'three':3, 'four':4} based on values using sorted()
+
+A)  	dict1 = {'two':2, 'one':1, 'three':3, 'four':4}
+      	l =sorted(dict1.items(), key=lambda x:x[1])
+      	print(l)
+
+
+
+3)   write a function that takes an array of integers and returns that array rotated by N positions using python..?
+
+	n=int(input("enter range :"))
+	def rotate(n):
+    		inp = [1,2,3,4,5,6]
+    		out = []
+    		for i in range(-n,len(inp)-n):
+        			out.append(inp[i])
+    		print(out)
+	print(rotate(n))
+
+o/p : enter range :2            enter range :3
+       [5, 6, 1, 2, 3,4]             [4, 5, 6, 1, 2, 3, ]
+
+
+
+4)  create a UI to create ticket will have two tabs.
+      1)  First tab will have a form to feed following details and save it as a pickled or json file 
+	a) Name	b) E-mail ID      c) Ticket type eg: Hardware, Software     d) Message
+       2)  Second tab will display the data in saved pickled or json file.
+
+
+
+5)    write a function to find out perpendicular 3d point on any two given point in 3d space,
+         ex: if point A=[0,0,1], B=[1,0,0] then O/P: [0,1,0]
+
+
+6)  IP Address validation.?
+	import re
+	def is_valid_ip(ip):
+    		m = re.match(r"^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$", ip)
+    		return bool(m) and all(map(lambda n: 0 <= int(n) <= 255, m.groups()))
+	print(is_valid_ip(input("enter ip address :")))
+
+7)  write a function to get multiples of 7 in a given range using Generator and Next methods
+	def my_gen(max):
+     	for i in range(7, max, 7):
+         		if i>0:
+            		   yield i
+	 a=my_gen(int(input("enter range :")))
+	while True:
+    		try:	
+		   print(next(a))
+    		except:
+        		   break
+
+
+
+
+9)  count the words in given string, use dictionary to print key as word and value as count..?
+	s = "Ravi had been saying that he had been there".casefold()
+	sl = s.split()
+	d = {}.fromkeys(sl,0)	
+	for i in sl:
+    		if i in d.keys():
+        		d[i]+=1
+	print(d)
+
+	or 
+
+	s = "Ravi had been saying that he had been there".casefold()
+	sl = s.split()
+	d = {}
+	for i in sl:
+    		d.setdefault(i,0)
+    		d[i] += 1
+	print(d)
+
+
+10) Function to find Maximum legth of consecutive 1's in a binary string 
+
+def maxConsecutive1(inp): 
+	print max(map(len,inp.split('0'))) 
+if __name__ == "__main__": 
+	inp = '11000111101010111'
+	maxConsecutive1(inp) 
+
+
+11)  Most frequently occerring item in an Array..?
+def max_rep(inp):
+    d = {}.fromkeys(inp, 0)
+    for i in inp:
+        if i in d.keys():
+            d[i] +=1
+    print(d)
+    max_rep = max(d.values())
+    for k, v in d.items():
+        if max_rep == v:
+            print('max repeat no. in list is >> ',k)
+
+if __name__ == '__main__':
+    n = int(input('enter no of elements in list : '))
+    inp = []
+    for i in range(n):
+        inp.append(input('enter element : '))
+
+max_rep(inp)
+
+
+12)  commen element in two sorted lists..?
+a = [1, 2, 3, 5, 9]
+b = [1, 2, 6, 7, 9]
+level = max(len(a),len(b))
+rep_ele = []
+for i in range(level):
+ if a[i] in b:
+     rep_ele.append(a[i])
+print(rep_ele)
+
+     (or)
+
+a, b = set(a), set(b)
+rep = a.intersection(b)
+print(rep)
+
+
+13)  input = [3, 2,4,6,5] >> o/p: True, input = [1,2,3,5,6] >> o/p: False
+def func(inp):
+    l2 = inp[0::2]
+    a, b, c = l2
+    if (a**2) + (b**2) == c**2:
+        print(l2)
+    else:
+        print(None)
+
+if __name__ == "__main__":
+    inp = []
+    for _ in range(5):
+       inp.append(int(input('enter element :')))
+    func(inp)
+

@@ -1,0 +1,15 @@
+a=tuple()
+print(a)
+print(type(a))
+b=(10,)
+print(type(b))
+print()
+c=()
+print(type(c))
+print()
+
+d=(10)
+print(type(d))
+e=((1),)
+print(type(e[0]),type(e))
+

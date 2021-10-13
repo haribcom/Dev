@@ -1,0 +1,37 @@
+{%include 'hrb/base1.html' %}
+<!DOCTYPE html>
+{%block body%}
+<table>
+  <tr>
+    <td>
+        <div id="left1"><center>
+<h3 margin="5px">Available Rooms:{{total}}</h3></center><hr>
+<h2>Ac Rooms:{{Acrooms}}
+</h2>
+<h2>NonAc Rooms:{{NonAc}}
+</h2>
+        </div></td>
+        <td><div id="middle1">  <center> <h1>BOOK ROOM HERE</h1><form class=""  method="post">
+            {{form.as_p}}
+            {% csrf_token %}
+            <button type="submit" name="button">submit</button>
+            <input type="hidden" name="alert" value="{{alert}}" readonly>
+
+          </form></center>
+
+
+        </div></td>
+        <td>
+        <div id="right1">
+<h3>visitors list:{{visitorscount}}</h3><hr>
+{% for visitor in visitors%}
+{%if visitor.username != 'hari' %}
+<h1>{{visitor.username}}</h1>
+
+{% endif %}
+{%endfor%}
+{% include 'hrb/pagination.html' with page=visitors%}
+        </div></td>
+  </tr>
+</table>
+{%endblock%}

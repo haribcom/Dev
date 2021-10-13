@@ -1,0 +1,5 @@
+n=str(input("enter a number"))
+a=tuple(n)
+b=list(n)
+print(a)
+print(b)

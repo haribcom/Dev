@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends "admin/base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}{{ title }} | {{ site_title|default:_("Django site admin") }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="/">
+        <img src="{% static 'my.jpg' %}" height="40px" /> <b>HARI HOTEL ADMIN</b>
+    </a>
+</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
